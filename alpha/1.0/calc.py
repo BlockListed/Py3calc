@@ -1,5 +1,5 @@
 import math
-# this is the selection code! codename part SELECT
+# this is the code were the user choses the operator! codename part SELECT
 select = input('''Please select what function you want to use
 + for Addition
 - for Subtraction
