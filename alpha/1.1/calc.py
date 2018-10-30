@@ -80,7 +80,7 @@ if select == '-':
 #codename part D
 if select == '/':
 
- sub()
+ dev()
 
 #codename part M
 if select == '*':
