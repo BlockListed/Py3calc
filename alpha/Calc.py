@@ -1,18 +1,23 @@
 import math
 # this is the selection code! codename part SELECT
-select = input('''Please select what function you want to use
-+ for Addition
-- for Subtraction
-/ for Devision
-* for Multiplication
-SQRT for squareroot please change second number to zero
-HYPO for hypotenuse solver
-TTPO for to the power of
-Here : ''') 
+def selector():
+    global select
+    select = input('''Please select what function you want to use
+    + for Addition
+    - for Subtraction
+    / for Devision
+    * for Multiplication
+    SQRT for squareroot please change second number to zero
+    HYPO for hypotenuse solver
+    TTPO for to the power of
+    Here : ''') 
 
 #this is were the user input's the numbers
-NUM1 = input("Please put first number here : ")
-NUM2 = input("Please put second number here : ")
+def numselect():
+    global NUM1
+    global NUM2
+    NUM1 = input("Please put first number here : ")
+    NUM2 = input("Please put second number here : ")
 
 #all results are calculated here because if it's in the "if" part's the program will not 
 
@@ -56,8 +61,6 @@ def sqrt():
  print (SQRT)
 
 
-
-
 #HYPO
 def hypo():
  HYPO1 = float(NUM1) ** 2
@@ -74,37 +77,19 @@ def ttpo():
 
 
 
-#this is the if part for addition it calls the function. codename part A
-if select == '+':
+#Main
+def main():
+    selector()
+    numselect()
+    #using dict as switch statement
+    value = {
+        "+" : add,
+        "-" : sub,
+        "/" : dev,
+        "*" : mul,
+        "sqrt" : sqrt,
+        "hypo" : hypo,
+        "ttpo" : hypo
+    }[select.casefold()]()
 
- add()
-
-#this is the subtraction part always just print's the result. codename part S
-if select == '-':
-
- sub()
-
-#codename part D
-if select == '/':
-
- dev()
-
-#codename part M
-if select == '*':
-
- mul()
-
-#codename part SQRT
-if select == 'SQRT':
- 
- sqrt()
-
-#codename part HYPO
-if select == 'HYPO':
- 
- hypo()
-
-#codename part TTPO
-if select == 'TTPO':
- 
- ttpo()
+main()
