@@ -10,14 +10,16 @@ def selector():
     SQRT for squareroot please change second number to zero
     HYPO for hypotenuse solver
     TTPO for to the power of
+    PDB2N for percentage difference between 2 Numbers
+    DIS for Degrees in a shape with a certain amount of corners (leave NUM2 empty)
     Here : ''') 
 
 #this is were the user input's the numbers
 def numselect():
     global NUM1
     global NUM2
-    NUM1 = input("Please put first number here : ")
-    NUM2 = input("Please put second number here : ")
+    NUM1 = float(input("Please put first number here : "))
+    NUM2 = float(input("Please put second number here : "))
 
 #all results are calculated here because if it's in the "if" part's the program will not 
 
@@ -76,8 +78,23 @@ def ttpo():
  print (rettpo)
 
 
+#PDB2N
+def pdb2n():
+    PD1 = NUM1 - NUM2
+    PD2 = NUM1 + NUM2
+    PD3 = (PD1 / PD1) / 2
+    REPD = PD3 * 100
+    print (REPD)
 
-#Main
+
+#DIS
+def dis():
+    DS1 = NUM1 - 2
+    REDS = DS1 * 180
+    print (REDS)
+
+
+#Main0
 def main():
     selector()
     numselect()
@@ -89,7 +106,9 @@ def main():
         "*" : mul,
         "sqrt" : sqrt,
         "hypo" : hypo,
-        "ttpo" : hypo
+        "ttpo" : ttpo,
+        "pdb2n" : pdb2n,
+        "dis" : dis,
     }[select.casefold()]()
 
 main()
